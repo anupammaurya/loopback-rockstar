@@ -1,0 +1,46 @@
+{
+  "name": "student",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "mixins": {
+    "Paginator": {
+      "limit": 5,        
+      "maxLimit": 100,     
+      "noMaxLimit": true 
+    }
+  },
+  "validations": [],
+  "relations": {
+    "lockers": {
+      "type": "hasOne",
+      "model": "locker",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "classes": {
+      "type": "hasAndBelongsToMany",
+      "model": "class",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,34 @@
+{
+  "name": "subject",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "teachers": {
+      "type": "hasMany",
+      "model": "teacher",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "classes": {
+      "type": "hasMany",
+      "model": "class",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

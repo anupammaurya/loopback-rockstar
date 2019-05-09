@@ -1,0 +1,58 @@
+{
+  "name": "class",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "subjectId": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mysql": {
+        "columnName": "subject_id",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "teachers": {
+      "type": "hasMany",
+      "model": "teacher",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "subject": {
+      "type": "belongsTo",
+      "model": "subject",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "students": {
+      "type": "hasAndBelongsToMany",
+      "model": "student",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "url": "",
+    "database": "Anupam-database",
+    "password": "root",
+    "name": "db",
+    "user": "root",
+    "connector": "mysql"
+  }
+}
